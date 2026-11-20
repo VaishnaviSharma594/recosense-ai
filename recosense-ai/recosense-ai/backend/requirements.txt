@@ -1,0 +1,19 @@
+fastapi==0.165.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.3
+pydantic-settings==2.16.3
+email-validator>=2.2
+sqlalchemy==2.1.9
+alembic==1.20.1
+psycopg[binary]==3.3.9
+pyjwt==2.15.1
+bcrypt==5.0.0
+python-multipart>=0.0.20
+pandas==3.1.1
+numpy==2.5.5
+scikit-learn==1.9.1
+nltk==3.10.4
+joblib>=1.5
+# testing
+pytest==9.2.0
+httpx==0.28.1

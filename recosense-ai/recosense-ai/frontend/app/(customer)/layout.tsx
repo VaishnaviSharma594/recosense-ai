@@ -1,0 +1,12 @@
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+
+export default function CustomerLayout({ children }: LayoutProps<"/">) {
+  return (
+    <>
+      <Navbar />
+      <main id="main" className="flex-1">{children}</main>
+      <Footer />
+    </>
+  );
+}

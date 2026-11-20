@@ -1,0 +1,28 @@
+# Render Blueprint for the backend + managed PostgreSQL (frontend deploys to Vercel).
+databases:
+  - name: recosense-db
+    plan: free
+    databaseName: recosense
+    user: recosense
+services:
+  - type: web
+    name: recosense-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: sh scripts/start.sh
+    healthCheckPath: /api/health
+    envVars:
+      - key: ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.13.1
+      - key: DATABASE_URL
+        fromDatabase: { name: recosense-db, property: connectionString }
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false   # set to your Vercel URL, e.g. https://recosense-ai.vercel.app
+      - key: FRONTEND_URL
+        sync: false

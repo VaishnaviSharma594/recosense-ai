@@ -1,0 +1,169 @@
+{
+  "version": "1.0.0",
+  "trained_at": "2026-11-19T13:27:38.272039+00:00",
+  "dataset": "womens_clothing_reviews.csv",
+  "dataset_size": 22636,
+  "train_size": 18108,
+  "test_size": 4528,
+  "label_distribution": {
+    "positive": 17443,
+    "neutral": 2823,
+    "negative": 2370
+  },
+  "models": {
+    "logreg": {
+      "name": "TF-IDF + Logistic Regression",
+      "file": "sentiment_tfidf_logreg.joblib",
+      "metrics": {
+        "accuracy": 0.8207,
+        "precision_macro": 0.6502,
+        "recall_macro": 0.6941,
+        "f1_macro": 0.667,
+        "precision_weighted": 0.8511,
+        "recall_weighted": 0.8207,
+        "f1_weighted": 0.8331,
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "confusion_matrix": [
+          [
+            300,
+            142,
+            32
+          ],
+          [
+            149,
+            317,
+            99
+          ],
+          [
+            60,
+            330,
+            3099
+          ]
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.5893909626719057,
+            "recall": 0.6329113924050633,
+            "f1-score": 0.6103763987792472,
+            "support": 474.0
+          },
+          "neutral": {
+            "precision": 0.4017743979721166,
+            "recall": 0.5610619469026549,
+            "f1-score": 0.46824224519940916,
+            "support": 565.0
+          },
+          "positive": {
+            "precision": 0.9594427244582043,
+            "recall": 0.8882201203783319,
+            "f1-score": 0.9224586992111922,
+            "support": 3489.0
+          },
+          "accuracy": 0.8206713780918727,
+          "macro avg": {
+            "precision": 0.6502026950340755,
+            "recall": 0.6940644865620166,
+            "f1-score": 0.6670257810632828,
+            "support": 4528.0
+          },
+          "weighted avg": {
+            "precision": 0.8511195929318472,
+            "recall": 0.8206713780918727,
+            "f1-score": 0.833112562523604,
+            "support": 4528.0
+          }
+        },
+        "test_size": 4528
+      },
+      "latency_ms": 0.2087,
+      "train_seconds": 35.47,
+      "params": {
+        "C": 0.5,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "class_weight": "balanced"
+      }
+    },
+    "cnb": {
+      "name": "TF-IDF + Complement Naive Bayes",
+      "file": "sentiment_tfidf_cnb.joblib",
+      "metrics": {
+        "accuracy": 0.8328,
+        "precision_macro": 0.6536,
+        "recall_macro": 0.5634,
+        "f1_macro": 0.5912,
+        "precision_weighted": 0.7985,
+        "recall_weighted": 0.8328,
+        "f1_weighted": 0.8076,
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "confusion_matrix": [
+          [
+            239,
+            106,
+            129
+          ],
+          [
+            102,
+            117,
+            346
+          ],
+          [
+            27,
+            47,
+            3415
+          ]
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.6494565217391305,
+            "recall": 0.5042194092827004,
+            "f1-score": 0.5676959619952494,
+            "support": 474.0
+          },
+          "neutral": {
+            "precision": 0.43333333333333335,
+            "recall": 0.20707964601769913,
+            "f1-score": 0.28023952095808385,
+            "support": 565.0
+          },
+          "positive": {
+            "precision": 0.877892030848329,
+            "recall": 0.9787904843794784,
+            "f1-score": 0.9255996747526765,
+            "support": 3489.0
+          },
+          "accuracy": 0.8328180212014135,
+          "macro avg": {
+            "precision": 0.6535606286402643,
+            "recall": 0.5633631798932927,
+            "f1-score": 0.5911783859020032,
+            "support": 4528.0
+          },
+          "weighted avg": {
+            "precision": 0.798507292461904,
+            "recall": 0.8328180212014135,
+            "f1-score": 0.807606113193276,
+            "support": 4528.0
+          }
+        },
+        "test_size": 4528
+      },
+      "latency_ms": 0.1782,
+      "train_seconds": 3.78,
+      "params": {
+        "alpha": 0.5
+      }
+    }
+  },
+  "active_model": "logreg"
+}
